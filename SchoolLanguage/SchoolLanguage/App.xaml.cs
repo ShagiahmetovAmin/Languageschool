@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using SchoolLanguage.Components;
 
 namespace SchoolLanguage
 {
@@ -13,5 +14,6 @@ namespace SchoolLanguage
     /// </summary>
     public partial class App : Application
     {
+        public static LanguageSchoollllEntities db = new LanguageSchoollllEntities();
     }
 }

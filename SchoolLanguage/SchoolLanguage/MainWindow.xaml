@@ -6,7 +6,25 @@
         xmlns:local="clr-namespace:SchoolLanguage"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="29*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Grid.Row="0" Source="/Pages/school_logo.png" />
+            <StackPanel Background="#FFE7FABF" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+            <TextBlock Margin="70 20" >Hello Language shcool</TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Background="#FFE7FABF">
+                <Button x:Name="GoBack">Назад</Button>
+            
+            
+                <Button x:Name="GoRight">Вперёд</Button>
+                
+            </StackPanel>
     </Grid>
 </Window>

@@ -18,7 +18,10 @@
             <ColumnDefinition Width="29*"/>
         </Grid.ColumnDefinitions>
         <Image Grid.Column="0" Grid.Row="0" Source="/Pages/school_logo.png" />
-        <TextBlock Margin="70 30" Grid.Row="0" Grid.Column="1" >Hello Language shcool</TextBlock>
+        <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+            <TextBlock Margin="70 20" >Hello Language shcool</TextBlock>
+        </StackPanel>
+        
 
     </Grid>
 </Page>

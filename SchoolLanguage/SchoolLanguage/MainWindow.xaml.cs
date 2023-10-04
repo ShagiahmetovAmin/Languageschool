@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace SchoolLanguage
 {
@@ -23,6 +24,14 @@ namespace SchoolLanguage
         public MainWindow()
         {
             InitializeComponent();
+            var path = @"C:\Users\222117\Desktop\";
+            foreach(var i in App.db.Service.ToArray())
+            {
+                var fullPath = path + i.MainImagePath.Trim();
+                var imageByte = File.ReadAllBytes(fullPath);
+                i.MainImage = imageByte;
+            }
+            App.db.SaveChanges();
         }
     }
 }
