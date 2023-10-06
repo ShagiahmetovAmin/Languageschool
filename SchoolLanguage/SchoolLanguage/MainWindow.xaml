@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchoolLanguage"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="850">
     <Grid Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -17,7 +17,7 @@
             </Grid.ColumnDefinitions>
             <Image Grid.Column="0" Grid.Row="0" Source="/Pages/school_logo.png" />
             <StackPanel Background="#FFE7FABF" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
-            <TextBlock Margin="70 20" >Hello Language shcool</TextBlock>
+            <TextBlock FontSize="25" Margin="70 20" HorizontalAlignment="Center">Hello Language shcool</TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Background="#FFE7FABF">
                 <Button x:Name="GoBack">Назад</Button>
@@ -26,5 +26,7 @@
                 <Button x:Name="GoRight">Вперёд</Button>
                 
             </StackPanel>
+
+        <Frame x:Name="MainFrame" Grid.Column="1" Grid.Row="1"></Frame>
     </Grid>
 </Window>
