@@ -21,12 +21,23 @@
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Background="#FFE7FABF">
                 <Button x:Name="GoBack">Назад</Button>
-            
+            <Button x:Name="ActiveBtn" Click="ActiveBtn_Click">
+                <TextBlock>Вкл
+                <LineBreak/>
+                админа</TextBlock>
+            </Button>
+
+            <Button x:Name="DActiveBtn" Click="DActiveBtn_Click">
+                <TextBlock>Выкл
+                <LineBreak/>
+                админа</TextBlock>
+            </Button>
+            <PasswordBox x:Name="PassB"></PasswordBox>
             
                 <Button x:Name="GoRight">Вперёд</Button>
                 
             </StackPanel>
 
-        <Frame x:Name="MainFrame" Grid.Column="1" Grid.Row="1"></Frame>
+        <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Grid.Column="1" Grid.Row="1"></Frame>
     </Grid>
 </Window>

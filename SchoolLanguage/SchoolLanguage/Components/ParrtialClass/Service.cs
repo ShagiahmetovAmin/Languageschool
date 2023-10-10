@@ -16,9 +16,15 @@ namespace SchoolLanguage.Components
                 if (Discount == 0)
                     return $"{Cost:0} рублей за {DurationInSeconds / 60} минут";
                 else
-                    return $"  {Cost - (Cost*(decimal)Discount/100)} рублей за {DurationInSeconds / 60} минут";
+                    return $"  {Cost - (Cost * (decimal)Discount / 100):0} рублей за {DurationInSeconds / 60} минут";
             }
         }
+        public string Saleviv
+        {
+            get { if (Discount != 0) return $"* скидка {Discount}%"; else return null; }
+        }
+
+        
         public Visibility CostVisibility
         {
             get

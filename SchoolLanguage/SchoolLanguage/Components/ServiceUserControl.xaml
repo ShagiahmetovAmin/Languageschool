@@ -26,9 +26,9 @@
             </StackPanel>
             
             <TextBlock x:Name="SaleTb" Grid.Column="1" Grid.Row="2"></TextBlock>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
-                <Button x:Name="RedactBtn" Margin="0 0 20 0">Редактировать</Button>
-                <Button x:Name="DeleteBtn" Margin="10 0 0 0">Удалить</Button>
+            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
+                <Button x:Name="RedactBtn">Редактировать</Button>
+                <Button x:Name="DeleteBtn" >Удалить</Button>
             </StackPanel>
         </Grid>
     </Border>

@@ -35,5 +35,22 @@ namespace SchoolLanguage
             //App.db.SaveChanges();
             MainFrame.Navigate(new ServiceListPage());
         }
+
+        private void DActiveBtn_Click(object sender, RoutedEventArgs e)
+        {
+           App.isAdmin = false;
+           MainFrame.Navigate(new ServiceListPage());
+           PassB.Clear();
+        }
+
+        private void ActiveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(PassB.Password.ToString() == "0000")
+            {
+                App.isAdmin = true;
+            }
+            PassB.Clear();
+            MainFrame.Navigate(new ServiceListPage());
+        }
     }
 }

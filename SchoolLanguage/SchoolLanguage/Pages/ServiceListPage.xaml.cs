@@ -24,11 +24,18 @@ namespace SchoolLanguage.Pages
         public ServiceListPage()
         {
             InitializeComponent();
-
+            if (App.isAdmin == false)
+            {
+                AddBtn.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                AddBtn.Visibility = Visibility.Visible;
+            }
             var services = App.db.Service.ToList();
             foreach(var service in services)
             {
-                ServiceWrapPanel.Children.Add(new ServiceUserControl(new Image(), service.Title,service.Cost, service.CostTime, service.Discount.ToString(), service.CostVisibility));
+                ServiceWrapPanel.Children.Add(new ServiceUserControl(new Image(), service.Title,service.Cost, service.CostTime, service.Saleviv, service.CostVisibility));
             }
         }
     }

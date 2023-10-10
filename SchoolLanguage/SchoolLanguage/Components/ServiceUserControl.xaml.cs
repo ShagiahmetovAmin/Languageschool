@@ -22,13 +22,24 @@ namespace SchoolLanguage.Components
     {
         public ServiceUserControl(Image image, string title,decimal cost, string costTime, string sale, Visibility costVisibility)
         {
+            
             InitializeComponent();
             SerImg = image;
-            CosTb.Text = cost.ToString();
+            CosTb.Text = cost.ToString("0");
             TitleTb.Text = title;
             CostTimeTb.Text = costTime;
             SaleTb.Text = sale;
             CosTb.Visibility = costVisibility;
+            if(App.isAdmin == false)
+            {
+                RedactBtn.Visibility = Visibility.Hidden;
+                DeleteBtn.Visibility = Visibility.Hidden;
+            }
+            //else
+            //{
+            //    RedactBtn.Visibility = Visibility.Visible;
+            //    DeleteBtn.Visibility = Visibility.Visible;
+            //}
         }
     }
 }
