@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,26 +21,56 @@ namespace SchoolLanguage.Components
     /// </summary>
     public partial class ServiceUserControl : UserControl
     {
-        public ServiceUserControl(Image image, string title,decimal cost, string costTime, string sale, Visibility costVisibility)
+        Service service;
+        public ServiceUserControl(Service _service)
         {
             
             InitializeComponent();
-            SerImg = image;
-            CosTb.Text = cost.ToString("0");
-            TitleTb.Text = title;
-            CostTimeTb.Text = costTime;
-            SaleTb.Text = sale;
-            CosTb.Visibility = costVisibility;
+            service= _service;
+            ColorBd.Background = service.DiscBr;
+            CosTb.Text = service.Cost.ToString("0");
+            TitleTb.Text = service.Title;
+            CostTimeTb.Text = service.CostTime;
+            SaleTb.Text = service.Saleviv;
+            CosTb.Visibility = service.CostVisibility;
+            SerImg.Source = GetImage(service.MainImage);
             if(App.isAdmin == false)
             {
                 RedactBtn.Visibility = Visibility.Hidden;
                 DeleteBtn.Visibility = Visibility.Hidden;
             }
-            //else
-            //{
-            //    RedactBtn.Visibility = Visibility.Visible;
-            //    DeleteBtn.Visibility = Visibility.Visible;
-            //}
+          
+        }
+       private BitmapImage GetImage(byte[] byteImage)
+       {
+            BitmapImage bitmapImg = new BitmapImage();
+            try
+            {
+                        MemoryStream byteStr = new MemoryStream(byteImage);
+                        bitmapImg.BeginInit();
+                        bitmapImg.StreamSource = byteStr;
+                        bitmapImg.EndInit();
+                        return bitmapImg;
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
+            return bitmapImg;
+            
+       }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(service.ClientService!=null)
+            {
+                MessageBox.Show("dont delete");
+            }
+            else
+            {
+                App.db.Service.Remove(service);
+                App.db.SaveChanges();
+            }
         }
     }
 }

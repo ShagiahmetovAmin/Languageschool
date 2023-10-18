@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:SchoolLanguage.Components"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="750">
-    <Border BorderBrush="#FF04A0FF" BorderThickness="1" Margin="10" Width="750">
-        <Grid >
+    <Border BorderBrush="#FF04A0FF" BorderThickness="1" Margin="10" Width="750" x:Name="ColorBd">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="7*"/>
                 <RowDefinition Height="8*"/>
@@ -28,7 +28,7 @@
             <TextBlock x:Name="SaleTb" Grid.Column="1" Grid.Row="2"></TextBlock>
             <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
                 <Button x:Name="RedactBtn">Редактировать</Button>
-                <Button x:Name="DeleteBtn" >Удалить</Button>
+                <Button x:Name="DeleteBtn" Click="DeleteBtn_Click" >Удалить</Button>
             </StackPanel>
         </Grid>
     </Border>

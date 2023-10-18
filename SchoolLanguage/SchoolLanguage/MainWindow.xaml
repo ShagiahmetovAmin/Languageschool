@@ -26,15 +26,14 @@
                 <LineBreak/>
                 админа</TextBlock>
             </Button>
-
+            <PasswordBox x:Name="PassB"></PasswordBox>
             <Button x:Name="DActiveBtn" Click="DActiveBtn_Click">
                 <TextBlock>Выкл
                 <LineBreak/>
                 админа</TextBlock>
             </Button>
-            <PasswordBox x:Name="PassB"></PasswordBox>
             
-                <Button x:Name="GoRight">Вперёд</Button>
+            
                 
             </StackPanel>
 

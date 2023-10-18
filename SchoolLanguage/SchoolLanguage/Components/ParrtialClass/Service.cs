@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace SchoolLanguage.Components
 {
@@ -33,6 +34,27 @@ namespace SchoolLanguage.Components
                     return Visibility.Collapsed;
                 else 
                     return Visibility.Visible;
+            }
+        }
+
+        public decimal TotalCost
+        {
+            get
+            {
+                if (Discount != 0) return Cost - (Cost * (decimal)Discount) / 100;
+                else return Cost;
+            }
+        }
+        public Brush DiscBr
+        {
+            get
+            {
+                if (Discount != 0)
+                    return new SolidColorBrush(Colors.MediumSpringGreen);
+                else return new SolidColorBrush(Colors.White);
+
+                    
+
             }
         }
     }

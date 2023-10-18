@@ -14,12 +14,34 @@
             <RowDefinition Height="63*"/>
             <RowDefinition Height="14*"/>
         </Grid.RowDefinitions>
-
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <ComboBox x:Name="SortPriceCb" SelectionChanged="SortPriceCb_SelectionChanged">
+                <ComboBoxItem>По умолчанию</ComboBoxItem>
+                <ComboBoxItem>По возрастанию</ComboBoxItem>
+                <ComboBoxItem>По убыванию</ComboBoxItem>
+            </ComboBox>
+            <TextBlock VerticalAlignment="Center">По скидке</TextBlock>
+            <ComboBox x:Name="SortDiscountCb" SelectionChanged="SortDiscountCb_SelectionChanged">
+                <ComboBoxItem>Все</ComboBoxItem>
+                <ComboBoxItem>от 0 до 5</ComboBoxItem>
+                <ComboBoxItem>от 5 до 15</ComboBoxItem>
+                <ComboBoxItem>от 15 до 30</ComboBoxItem>
+                <ComboBoxItem>от 30 до 70</ComboBoxItem>
+                <ComboBoxItem>от 70 до 100</ComboBoxItem>
+            </ComboBox>
+            <TextBlock VerticalAlignment="Center">По названию и описанию</TextBlock>
+            <TextBox x:Name="SearchTb" TextChanged="SearchTb_TextChanged"></TextBox>
+        </StackPanel>
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Row="1" HorizontalAlignment="Center">
             <WrapPanel x:Name="ServiceWrapPanel" Grid.Row="1">
             
             </WrapPanel>
         </ScrollViewer>
-        <Button x:Name="AddBtn" Grid.Row="2">Добавить</Button>
+        
+        <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button x:Name="AddBtn" Grid.Row="2">Добавить</Button>
+            <TextBlock VerticalAlignment="Center" x:Name="CountDateTb" Margin="5 0"></TextBlock>
+        </StackPanel>
+        
     </Grid>
 </Page>
