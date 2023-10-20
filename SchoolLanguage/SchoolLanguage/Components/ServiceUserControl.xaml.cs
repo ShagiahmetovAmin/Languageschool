@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SchoolLanguage.Pages;
 
 namespace SchoolLanguage.Components
 {
@@ -71,6 +72,11 @@ namespace SchoolLanguage.Components
                 App.db.Service.Remove(service);
                 App.db.SaveChanges();
             }
+        }
+
+        private void RedactBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Редактировать", new AddReadactPage()));
         }
     }
 }

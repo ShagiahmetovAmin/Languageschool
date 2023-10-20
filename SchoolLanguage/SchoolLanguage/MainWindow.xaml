@@ -17,10 +17,10 @@
             </Grid.ColumnDefinitions>
             <Image Grid.Column="0" Grid.Row="0" Source="/Pages/school_logo.png" />
             <StackPanel Background="#FFE7FABF" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
-            <TextBlock FontSize="25" Margin="70 20" HorizontalAlignment="Center">Hello Language shcool</TextBlock>
+            <TextBlock x:Name="TitleTb" FontSize="25" Margin="70 20" HorizontalAlignment="Center">Hello Language shcool</TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Background="#FFE7FABF">
-                <Button x:Name="GoBack">Назад</Button>
+                <Button x:Name="GoBackBtn" Click="GoBackBtn_Click" >Назад</Button>
             <Button x:Name="ActiveBtn" Click="ActiveBtn_Click">
                 <TextBlock>Вкл
                 <LineBreak/>

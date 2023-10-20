@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using SchoolLanguage.Pages;
+using SchoolLanguage.Components;
 
 namespace SchoolLanguage
 {
@@ -25,6 +26,7 @@ namespace SchoolLanguage
         public MainWindow()
         {
             InitializeComponent();
+            Navigation.mainWindow = this;
             //var path = @"C:\Users\222117\Desktop\";
             //foreach(var i in App.db.Service.ToArray())
             //{
@@ -33,24 +35,33 @@ namespace SchoolLanguage
             //    i.MainImage = imageByte;
             //}
             //App.db.SaveChanges();
-            MainFrame.Navigate(new ServiceListPage());
+            Navigation.NextPage(new PageComponent("Список услуг", new ServiceListPage()));
         }
 
         private void DActiveBtn_Click(object sender, RoutedEventArgs e)
         {
-           App.isAdmin = false;
-           MainFrame.Navigate(new ServiceListPage());
-           PassB.Clear();
+            App.isAdmin = false;
+            Navigation.NextPage(new PageComponent("Список услуг", new ServiceListPage()));
+            PassB.Clear();
+            Navigation.ClearHistory();
         }
 
         private void ActiveBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(PassB.Password.ToString() == "0000")
+            if (PassB.Password.ToString() == "0000")
             {
                 App.isAdmin = true;
             }
             PassB.Clear();
-            MainFrame.Navigate(new ServiceListPage());
+            Navigation.NextPage(new PageComponent("Список услуг", new ServiceListPage()));
+            Navigation.ClearHistory();
+        }
+
+
+
+        private void GoBackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.BackPage();
         }
     }
 }

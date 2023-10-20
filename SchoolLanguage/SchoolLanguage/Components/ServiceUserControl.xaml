@@ -27,7 +27,7 @@
             
             <TextBlock x:Name="SaleTb" Grid.Column="1" Grid.Row="2"></TextBlock>
             <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
-                <Button x:Name="RedactBtn">Редактировать</Button>
+                <Button x:Name="RedactBtn" Click="RedactBtn_Click">Редактировать</Button>
                 <Button x:Name="DeleteBtn" Click="DeleteBtn_Click" >Удалить</Button>
             </StackPanel>
         </Grid>

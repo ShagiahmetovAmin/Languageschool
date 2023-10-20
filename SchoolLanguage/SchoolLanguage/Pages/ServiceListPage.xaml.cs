@@ -97,5 +97,10 @@ namespace SchoolLanguage.Pages
         {
             Refresh();
         }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Редактировать", new AddReadactPage()));
+        }
     }
 }

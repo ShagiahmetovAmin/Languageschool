@@ -39,7 +39,7 @@
         </ScrollViewer>
         
         <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button x:Name="AddBtn" Grid.Row="2">Добавить</Button>
+            <Button x:Name="AddBtn" Grid.Row="2" Click="AddBtn_Click">Добавить</Button>
             <TextBlock VerticalAlignment="Center" x:Name="CountDateTb" Margin="5 0"></TextBlock>
         </StackPanel>
         
