@@ -47,11 +47,18 @@ namespace SchoolLanguage.Components
             BitmapImage bitmapImg = new BitmapImage();
             try
             {
+                if (service.MainImage!= null)
+                {
                         MemoryStream byteStr = new MemoryStream(byteImage);
                         bitmapImg.BeginInit();
                         bitmapImg.StreamSource = byteStr;
                         bitmapImg.EndInit();
-                        return bitmapImg;
+                }
+                else
+                {
+                    bitmapImg = new BitmapImage(new Uri(@"\Resources\school_logo.png", UriKind.Relative));
+                }
+                        
             }
             catch
             {
@@ -76,7 +83,7 @@ namespace SchoolLanguage.Components
 
         private void RedactBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new PageComponent("Редактировать", new AddReadactPage()));
+            Navigation.NextPage(new PageComponent("Редактировать", new AddReadactPage(service)));
         }
     }
 }

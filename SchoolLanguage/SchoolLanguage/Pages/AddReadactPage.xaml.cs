@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 using SchoolLanguage.Components;
+using System.IO;
 
 
 namespace SchoolLanguage.Pages
@@ -27,10 +29,25 @@ namespace SchoolLanguage.Pages
         {
             InitializeComponent();
             service = _service;
+            this.DataContext = service;
 
         }
 
         private void EditImage_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog()
+            {
+                Filter = "*.png|*.png|*.jpg|*.jng|*.jpeg|*.jpeg"
+            };
+            if(openFile.ShowDialog().GetValueOrDefault())
+            {
+                service.MainImage = File.ReadAllBytes
+                    (openFile.FileName);
+                KursImage.Source = new BitmapImage(new Uri(openFile.FileName));
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
