@@ -49,7 +49,11 @@ namespace SchoolLanguage.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            if(service.ID == 0)
+            {
+                App.db.Service.Add(service);
+            }
+            App.db.SaveChanges();
         }
     }
 }
