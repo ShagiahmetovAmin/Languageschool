@@ -24,11 +24,11 @@
 
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center">Стоимость</TextBlock>
-                <TextBox Text="{Binding Cost}" x:Name="CostTb"></TextBox>
+                <TextBox Text="{Binding Cost}" x:Name="CostTb" PreviewTextInput="CostTb_PreviewTextInput"></TextBox>
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center">Длительность</TextBlock>
-                <TextBox Text="{Binding DurationInSeconds}" x:Name="TimeTb"></TextBox>
+                    <TextBox PreviewTextInput="CostTb_PreviewTextInput" Text="{Binding DurationInSeconds}" x:Name="TimeTb"></TextBox>
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
@@ -38,12 +38,23 @@
             
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center">Скидка</TextBlock>
-                <TextBox Text="{Binding Discount}" x:Name="DiscountTb"></TextBox>
+                    <TextBox PreviewTextInput="CostTb_PreviewTextInput" Text="{Binding Discount}" x:Name="DiscountTb"></TextBox>
             </StackPanel>
             <StackPanel>
                 <Image Source="{Binding MainImage}"  x:Name="KursImage" Height="150" Width="150"></Image>
-                <Button x:Name="EditImage" Click="EditImage_Click">Изменить изображение</Button>
-            </StackPanel>
+                    <ListView x:Name="ImageList">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn>
+                                    <Image Source="{Binding PathotoByte}">
+                                        
+                                    </Image>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button x:Name="EditImage" Click="EditImage_Click">Изменить изображение</Button>
+                </StackPanel>
             <Button Click="Button_Click">Сохранить изменения</Button>
         </StackPanel>
 

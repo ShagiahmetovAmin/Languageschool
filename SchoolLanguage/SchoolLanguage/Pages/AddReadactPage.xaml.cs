@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using SchoolLanguage.Components;
 using System.IO;
-
+using System.ComponentModel;
 
 namespace SchoolLanguage.Pages
 {
@@ -49,11 +49,41 @@ namespace SchoolLanguage.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            StringBuilder error = new StringBuilder();
             if(service.ID == 0)
             {
-                App.db.Service.Add(service);
+                if(App.db.Service.Any(x => x.Title == service.Title))
+                {
+                    error.AppendLine("Такая услга уже существует");
+                }
+                else
+                {
+                  App.db.Service.Add(service);
+                }
             }
-            App.db.SaveChanges();
+            if (service.DurationInSeconds > 14400)
+            {
+                error.AppendLine("Длительность  не может привышать больше 4 часов");
+            }
+            if (error.Length > 0)
+            {
+                MessageBox.Show(error.ToString());
+            }
+            else
+            {
+                App.db.SaveChanges();
+                MessageBox.Show("Сохранено!");
+                Navigation.NextPage(new PageComponent("Список услуг", new ServiceListPage()));
+            }
+
+        }
+
+        private void CostTb_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!(char.IsDigit(e.Text[0])))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
