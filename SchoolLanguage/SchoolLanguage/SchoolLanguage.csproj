@@ -96,6 +96,9 @@
     </Compile>
     <Compile Include="Components\Navigation.cs" />
     <Compile Include="Components\ParrtialClass\Service.cs" />
+    <Compile Include="Components\PhotoUserControl.xaml.cs">
+      <DependentUpon>PhotoUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\Product.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
     <Compile Include="Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
+    <Page Include="Components\PhotoUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Components\ServiceUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

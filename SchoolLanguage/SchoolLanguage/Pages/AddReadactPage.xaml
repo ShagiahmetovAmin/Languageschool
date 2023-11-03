@@ -42,17 +42,11 @@
             </StackPanel>
             <StackPanel>
                 <Image Source="{Binding MainImage}"  x:Name="KursImage" Height="150" Width="150"></Image>
-                    <ListView x:Name="ImageList">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn>
-                                    <Image Source="{Binding PathotoByte}">
-                                        
-                                    </Image>
-                                </GridViewColumn>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                    <ScrollViewer HorizontalAlignment="Center" HorizontalScrollBarVisibility="Disabled" Height="200" Margin="2">
+                        <WrapPanel x:Name ="PhotoWp"></WrapPanel>
+                    </ScrollViewer>
+                    <Button x:Name="AddImageBtn" Click="AddImageBtn_Click">Добавить изображение</Button>
+                        
                     <Button x:Name="EditImage" Click="EditImage_Click">Изменить изображение</Button>
                 </StackPanel>
             <Button Click="Button_Click">Сохранить изменения</Button>

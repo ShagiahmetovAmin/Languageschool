@@ -30,6 +30,7 @@ namespace SchoolLanguage.Pages
             InitializeComponent();
             service = _service;
             this.DataContext = service;
+            RefreshPhoto();
 
         }
 
@@ -83,6 +84,33 @@ namespace SchoolLanguage.Pages
             if (!(char.IsDigit(e.Text[0])))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void AddImageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog()
+            {
+                Filter = "*.png|*.png|*.jpg|*.jng|*.jpeg|*.jpeg"
+            };
+            if (openFile.ShowDialog().GetValueOrDefault())
+            {
+                App.db.ServicePhoto.Add(new ServicePhoto
+                {
+                    ServiceID = service.ID,
+                    PhotoByte =  File.ReadAllBytes(openFile.FileName)
+                });
+                App.db.SaveChanges();
+                RefreshPhoto();
+
+            }
+        }
+        private void RefreshPhoto()
+        {
+            PhotoWp.Children.Clear();
+            foreach (var photo in service.ServicePhoto)
+            {
+                PhotoWp.Children.Add(new PhotoUserControl(photo));
             }
         }
     }
