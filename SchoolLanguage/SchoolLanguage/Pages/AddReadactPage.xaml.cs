@@ -28,6 +28,7 @@ namespace SchoolLanguage.Pages
         public AddReadactPage(Service _service)
         {
             InitializeComponent();
+            App.servicePage = this;
             service = _service;
             this.DataContext = service;
             RefreshPhoto();
@@ -105,13 +106,19 @@ namespace SchoolLanguage.Pages
 
             }
         }
-        private void RefreshPhoto()
+        public void RefreshPhoto()
         {
             PhotoWp.Children.Clear();
             foreach (var photo in service.ServicePhoto)
             {
                 PhotoWp.Children.Add(new PhotoUserControl(photo));
             }
+            BitmapImage bitmapImage = new BitmapImage();
+            MemoryStream byteStream = new MemoryStream(service.MainImage);
+            bitmapImage.BeginInit();
+            bitmapImage.StreamSource = byteStream;
+            bitmapImage.EndInit();
+            KursImage.Source = bitmapImage;
         }
     }
 }

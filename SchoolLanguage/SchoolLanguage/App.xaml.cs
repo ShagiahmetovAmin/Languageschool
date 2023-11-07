@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using SchoolLanguage.Components;
+using SchoolLanguage.Pages;
 
 namespace SchoolLanguage
 {
@@ -16,5 +17,8 @@ namespace SchoolLanguage
     {
         public static LanguageSchoollllEntities db = new LanguageSchoollllEntities();
         public static bool isAdmin = false;
+
+        public static MainWindow mainWindow;
+        public static AddReadactPage servicePage;
     }
 }

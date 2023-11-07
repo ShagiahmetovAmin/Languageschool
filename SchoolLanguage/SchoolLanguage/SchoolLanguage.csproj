@@ -95,6 +95,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Components\Navigation.cs" />
+    <Compile Include="Components\ParrtialClass\Client.cs" />
     <Compile Include="Components\ParrtialClass\Service.cs" />
     <Compile Include="Components\PhotoUserControl.xaml.cs">
       <DependentUpon>PhotoUserControl.xaml</DependentUpon>
@@ -107,6 +108,9 @@
     </Compile>
     <Compile Include="Components\ProductSale.cs">
       <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ReagPage.xaml.cs">
+      <DependentUpon>ReagPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\Service.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -133,6 +137,10 @@
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
     <Page Include="Components\PhotoUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\ReagPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

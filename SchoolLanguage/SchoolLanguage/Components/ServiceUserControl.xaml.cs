@@ -37,6 +37,7 @@ namespace SchoolLanguage.Components
             SerImg.Source = GetImage(service.MainImage);
             if(App.isAdmin == false)
             {
+                EntryBtn.Visibility = Visibility.Hidden;
                 RedactBtn.Visibility = Visibility.Hidden;
                 DeleteBtn.Visibility = Visibility.Hidden;
             }
@@ -84,6 +85,11 @@ namespace SchoolLanguage.Components
         private void RedactBtn_Click(object sender, RoutedEventArgs e)
         {
             Navigation.NextPage(new PageComponent("Редактировать", new AddReadactPage(service)));
+        }
+
+        private void EntryBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Запись на услугу", new ReagPage(service)));
         }
     }
 }
