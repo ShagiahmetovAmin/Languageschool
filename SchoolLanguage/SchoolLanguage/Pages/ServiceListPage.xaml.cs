@@ -102,5 +102,10 @@ namespace SchoolLanguage.Pages
         {
             Navigation.NextPage(new PageComponent("Добавить", new AddReadactPage(new Service())));
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Записи клиентов", new UpEnPage()));
+        }
     }
 }

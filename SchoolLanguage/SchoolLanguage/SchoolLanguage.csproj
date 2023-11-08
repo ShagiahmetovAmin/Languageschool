@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="Components\Navigation.cs" />
     <Compile Include="Components\ParrtialClass\Client.cs" />
+    <Compile Include="Components\ParrtialClass\ClientService.cs" />
     <Compile Include="Components\ParrtialClass\Service.cs" />
     <Compile Include="Components\PhotoUserControl.xaml.cs">
       <DependentUpon>PhotoUserControl.xaml</DependentUpon>
@@ -127,6 +128,9 @@
     <Compile Include="Components\Tag.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Components\UpEnPage.xaml.cs">
+      <DependentUpon>UpEnPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddReadactPage.xaml.cs">
       <DependentUpon>AddReadactPage.xaml</DependentUpon>
     </Compile>
@@ -145,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Components\ServiceUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\UpEnPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

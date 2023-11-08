@@ -15,11 +15,11 @@
             <ComboBox Width="250" x:Name="ClientCb"></ComboBox>
             <DatePicker Width="250" Margin="5" x:Name="DateDp"></DatePicker>
             <StackPanel Orientation="Horizontal">
-                <TextBlock>Время: XX:XX</TextBlock>
-                <TextBox x:Name="StartTimeTb"></TextBox>
+                <TextBlock VerticalAlignment="Center">Время: XX:XX</TextBlock>
+                <TextBox x:Name="StartTimeTb" TextChanged="StartTimeTb_TextChanged"></TextBox>
                 <TextBox x:Name="EndTimeTb" IsEnabled="False"></TextBox>
             </StackPanel>
-            <Button x:Name="EntryBtn">Записать</Button>
+            <Button x:Name="EntryBtn" Click="EntryBtn_Click">Записать</Button>
         </StackPanel>
     </Grid>
 </Page>
